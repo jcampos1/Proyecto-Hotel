@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "conexion1",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "conexion1",
+    "public": true
+  },
+  "categoria": {
+    "dataSource": "conexion1",
+    "public": true
+  },
+  "habitacion": {
+    "dataSource": "conexion1",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "conexion1",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "Correo": {
+    "dataSource": "myEmailDataSource",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "myEmailDataSource",
+    "public": true
+  }
+}

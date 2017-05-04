@@ -1,0 +1,32 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "conexion1": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "mysql://root:toor@localhost/hotel",
+    "database": "hotel",
+    "password": "toor",
+    "name": "conexion1",
+    "user": "root",
+    "connector": "mysql"
+  },
+  "myEmailDataSource": {
+    "name": "myEmailDataSource",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "jcampos@ea-asc.com",
+          "pass": "jcampos1"
+        }
+      }
+    ]
+  }
+}

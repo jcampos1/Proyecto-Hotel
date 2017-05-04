@@ -1,0 +1,45 @@
+{
+  "name": "categoria",
+  "plural": "categorias",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "string",
+      "required": true
+    },
+    "capacidad": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "tamano": {
+      "type": "string"
+    },
+    "caracteristicas": {
+      "type": "string",
+      "required": true
+    },
+    "precio": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "activo": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

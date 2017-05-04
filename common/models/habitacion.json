@@ -1,0 +1,32 @@
+{
+  "name": "habitacion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "numero": {
+      "type": "string",
+      "required": true
+    },
+    "estado": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "observacion": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "categoria": {
+      "type": "belongsTo",
+      "model": "categoria",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
