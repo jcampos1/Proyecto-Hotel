@@ -31,10 +31,22 @@ module.exports = function(app) {
         "email": "jcampos@ea-asc.com",
         "emailVerified": true
     },
+    {
+        "nombres": "Karloisi Yeimar",
+        "apellidos": "Vasquz Gomez",
+        "cedula": 21478469,
+        "fechanac": "2017-04-26T20:03:15.419Z",
+        "telefono": "04143494487",
+        "username": "kar",
+        "password": "kar",
+        "email": "kaarloisiv@hotmail.com",
+        "emailVerified": true
+    },
+
   ], function(err, users) {
     if (err) console.log(err);
 
-    console.log('Usuarios creados:', users);
+    console.log('Usuarios administrador y empleado creados.');
 
     //create the admin role
     Role.create({
@@ -42,7 +54,7 @@ module.exports = function(app) {
     }, function(err, role) {
       if (err) console.log(err);
 
-      console.log('Rol admin creado:', role);
+      console.log('Rol admin creado.');
 
       //make bob an admin
       role.principals.create({
@@ -51,7 +63,7 @@ module.exports = function(app) {
       }, function(err, principal) {
         if (err) console.log(err);
 
-        console.log('Created principal:', principal);
+        console.log('Asignado rol admin a '+users[0].username);
       });
     });
 
@@ -61,7 +73,7 @@ module.exports = function(app) {
     }, function(err, role) {
       if (err) console.log(err);
 
-      console.log('Created role:', role);
+      console.log('Rol empleado creado.');
 
       //make bob an admin
       role.principals.create({
@@ -70,8 +82,28 @@ module.exports = function(app) {
       }, function(err, principal) {
         if (err) console.log(err);
 
-        console.log('Created principal:', principal);
+        console.log('Asignado rol empleado a ', users[1].username);
       });
     });
+
+    //Creación rol cliente
+    Role.create({
+      name: 'cliente'
+    }, function(err, role) {
+      if (err) console.log(err);
+
+      console.log('Rol cliente creado.');
+
+       //make bob an admin
+      role.principals.create({
+        principalType: RoleMapping.USER,
+        principalId: users[2].username
+      }, function(err, principal) {
+        if (err) console.log(err);
+
+        console.log('Asignado rol cliente a ', users[2].username);
+      });
+
+      });
   });
 };
