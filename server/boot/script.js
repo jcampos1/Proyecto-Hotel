@@ -58,7 +58,7 @@ module.exports = function(app) {
 
       //make bob an admin
       role.principals.create({
-        principalType: RoleMapping.USER,
+        principalType: RoleMapping.ROLE,
         principalId: users[0].username
       }, function(err, principal) {
         if (err) console.log(err);
@@ -77,7 +77,7 @@ module.exports = function(app) {
 
       //make bob an admin
       role.principals.create({
-        principalType: RoleMapping.USER,
+        principalType: RoleMapping.ROLE,
         principalId: users[1].username
       }, function(err, principal) {
         if (err) console.log(err);
@@ -96,7 +96,7 @@ module.exports = function(app) {
 
        //make bob an admin
       role.principals.create({
-        principalType: RoleMapping.USER,
+        principalType: RoleMapping.ROLE,
         principalId: users[2].username
       }, function(err, principal) {
         if (err) console.log(err);
